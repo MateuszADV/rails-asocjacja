@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Doktors</h1>
+<p><%= current_user.email %></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Last name</th>
+      <th>Description</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @doktors.each do |doktor| %>
+      <tr>
+        <td><%= doktor.name %></td>
+        <td><%= doktor.last_name %></td>
+        <td><%= doktor.description %></td>
+        <td><%= link_to 'Show', doktor %></td>
+        <td><%= link_to 'Edit', edit_doktor_path(doktor) %></td>
+        <td><%= link_to 'Destroy', doktor, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Doktor', new_doktor_path %>

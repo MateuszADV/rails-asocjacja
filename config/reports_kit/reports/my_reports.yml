@@ -1,0 +1,6 @@
+measure: visit
+dimensions:
+  # - key: created_at
+  #   granularity: day
+  - pacient
+  - doktor
